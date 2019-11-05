@@ -1,0 +1,55 @@
+.flash-box
+  .notice
+    グループを作成しました
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        .side-header__box__user-name
+          oosawa
+        .side-header__box__menu
+          .side-header__box__nemu__new-group
+          %i.fa.fa-edit
+          .side-header__box__menu__edit-user
+          %i.fa.fa-cog
+    .groups
+      .group
+        %p.group__group-name
+          1
+        %p.group__latest-message
+          まだメッセージがありません
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %p.main-header__left-box__current-group
+          1
+        .main-header__left-box__member-list
+          %p.main-header__left-box__member-list__member
+            Member：oosawa
+      %p.main-header__edit-btn
+        Edit
+    .messages
+      .message
+        .message__upper-info
+          %p.message__upper-info__talker
+            oosawa
+          %p.message__upper-info__date
+            2019/11/04(Mon) 13:31:42
+        %p.message__text
+          aaaaaa       
+    .form
+      %input.input{placeholder: "type a message", value:  ""}/
+      .input-btn
+        %i.fa.fa-image.fa-lg
+      %p.submit-btn
+        Send
+
+      .input-file  
+        %input.input-file{type: "file"}
+
+      
+    
+  
+
+      
+
