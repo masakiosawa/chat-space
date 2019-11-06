@@ -1,0 +1,20 @@
+.chat-side
+  .side-header
+    .side-header__box
+      .side-header__box__user-name
+        = current_user.name
+      .side-header__box__menu
+        -# .side-header__box__menu__new-group
+        -# %i.fa.fa-edit
+        = link_to edit_user_path(current_user),class: "side-header__box__menu__new-group" do
+          = fa_icon 'edit', class: 'icon'
+        -# .side-header__box__menu__edit-user
+        -# %i.fa.fa-cog
+        = link_to edit_user_path(current_user),class: "side-header__box__menu__edit-user" do
+          = fa_icon 'cog', class: 'icon'
+  .groups
+    .group
+      %p.group__group-name
+        1
+      %p.group__latest-message
+        まだメッセージがありません
