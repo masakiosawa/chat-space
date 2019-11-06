@@ -2,34 +2,8 @@
   
 .wrapper
   = render "shared/chat-side.html.haml"
-  .chat-main
-    .main-header
-      .main-header__left-box
-        %p.main-header__left-box__current-group
-          1
-        .main-header__left-box__member-list
-          %p.main-header__left-box__member-list__member
-            Member：oosawa
-      %p.main-header__edit-btn
-        Edit
-    .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker
-            oosawa
-          %p.message__upper-info__date
-            2019/11/04(Mon) 13:31:42
-        %p.message__text
-          aaaaaa       
-    .form
-      %input.input{placeholder: "type a message", value:  ""}/
-      .input-btn
-        %i.fa.fa-image.fa-lg
-      %p.submit-btn
-        Send
+  = render "shared/chat-main.html.haml"
 
-      .input-file  
-        %input.input-file{type: "file"}
 
       
     
