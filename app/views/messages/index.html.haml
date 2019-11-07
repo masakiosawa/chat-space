@@ -2,12 +2,39 @@
   
 .wrapper
   = render "shared/chat-side.html.haml"
-  = render "shared/chat-main.html.haml"
 
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %p.main-header__left-box__current-group
+          = @group.name
+        .main-header__left-box__member-list
+          %p.main-header__left-box__member-list__member
+          - @group.users.each do |user|
+            = user.name          
+          
+          
+      %p.main-header__edit-btn
+        Edit
 
-      
+    .messages
+      = render @messages
     
-  
+    -# .form
+    -#   %input.input{placeholder: "type a message", value:  ""}/
+    -#   .input-btn
+    -#     %i.fa.fa-image.fa-lg
+    -#   %p.submit-btn
+    -#     Send
+    -#   .input-file  
+    -#     %input.input-file{type: "file"}
 
-      
+    .form
+      = form_for [@group, @message] do |f|
+        .form-f
+          = f.text_field :content, class: 'input', placeholder: 'type a message'
+          = f.label :image, class: 'input-btn' do
+            = fa_icon 'image', class: 'icon'
+            = f.file_field :image, class: 'input-file'
+          = f.submit 'Send', class: 'submit-btn'
 

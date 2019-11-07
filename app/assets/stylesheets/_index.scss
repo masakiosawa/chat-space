@@ -150,8 +150,6 @@
   height: 90px;
   background-color: #ddd;
   padding: 20px 40px;
-  display: flex;
-  justify-content: space-between;
   position: relative;
   box-sizing: border-box;
 }
@@ -165,23 +163,25 @@
     box-sizing:border;
   }    
   
-  .input-btn {
-    position: absolute;
-    right: 180px;
-    bottom: 33px;
-  }
+ 
   .input-file{
     position: absolute;
-    right: 90px;
-    bottom: 17px;
+    right: 180px;
+    bottom: 30px;
     display: block; 
     width: 23px;
-    opacity: 0.01;
+    display: none;
+  }
+
+  .input-btn{
+    position: absolute;
+    right: 180px;
+    bottom: 30px;
   }
 
 
   .submit-btn {
-    width: 50px;
+    width: 100px;
     height: 50px;
     padding: 0 30px;
     margin-left: 15px;
@@ -190,3 +190,9 @@
     background-color: #38aef0;
     color: white;
   }
+
+  .form-f {
+    display: flex;
+    justify-content: space-between;
+  }
+  
