@@ -1,55 +1,41 @@
 .flash-box
-  .notice
-    グループを作成しました
+  
 .wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        .side-header__box__user-name
-          oosawa
-        .side-header__box__menu
-          .side-header__box__nemu__new-group
-          %i.fa.fa-edit
-          .side-header__box__menu__edit-user
-          %i.fa.fa-cog
-    .groups
-      .group
-        %p.group__group-name
-          1
-        %p.group__latest-message
-          まだメッセージがありません
+  = render "shared/chat-side.html.haml"
+
   .chat-main
     .main-header
       .main-header__left-box
         %p.main-header__left-box__current-group
-          1
+          = @group.name
         .main-header__left-box__member-list
           %p.main-header__left-box__member-list__member
-            Member：oosawa
-      %p.main-header__edit-btn
-        Edit
+          - @group.users.each do |user|
+            = user.name          
+          
+          
+      = link_to edit_group_path(@group) do
+        .main-header__edit-btn
+          Edit
+
     .messages
-      .message
-        .message__upper-info
-          %p.message__upper-info__talker
-            oosawa
-          %p.message__upper-info__date
-            2019/11/04(Mon) 13:31:42
-        %p.message__text
-          aaaaaa       
-    .form
-      %input.input{placeholder: "type a message", value:  ""}/
-      .input-btn
-        %i.fa.fa-image.fa-lg
-      %p.submit-btn
-        Send
-
-      .input-file  
-        %input.input-file{type: "file"}
-
-      
+      = render @messages
     
-  
+    -# .form
+    -#   %input.input{placeholder: "type a message", value:  ""}/
+    -#   .input-btn
+    -#     %i.fa.fa-image.fa-lg
+    -#   %p.submit-btn
+    -#     Send
+    -#   .input-file  
+    -#     %input.input-file{type: "file"}
 
-      
+    .form
+      = form_for [@group, @message] do |f|
+        .form-f
+          = f.text_field :content, class: 'input', placeholder: 'type a message'
+          = f.label :image, class: 'input-btn' do
+            = fa_icon 'image', class: 'icon'
+            = f.file_field :image, class: 'input-file'
+          = f.submit 'Send', class: 'submit-btn'
 

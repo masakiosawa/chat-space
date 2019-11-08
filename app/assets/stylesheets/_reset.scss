@@ -6,6 +6,16 @@ html{
 	color:#000;
 	background:#FFF;
 }
+.fa-cog::before, .fa-edit::before {
+  color: white;
+}
+a {
+	color: white;
+}
+
+*{
+	text-decoration: none!important;
+}
 /*
 	TODO remove settings on BODY since we can't namespace it.
 */

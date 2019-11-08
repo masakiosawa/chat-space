@@ -1,0 +1,36 @@
+
+
+  -# -# .messages
+  -# -#   .message
+  -# -#     .message__upper-info
+  -# -#       %p.message__upper-info__talker
+  -# -#         oosawa
+  -# -#       %p.message__upper-info__date
+  -# -#         2019/11/04(Mon) 13:31:42
+  -# -#     %p.message__text
+  -# -#       aaaaaa
+
+  -# .messages
+  -#   .message
+  -#     .message__upper-info
+  -#       .message__upper-info__talker
+  -#         = message.user.name
+  -#       .message__upper-info__date
+  -#         = message.created_at.strftime("%Y/%m/%d %H:%M")
+  -#     .message__text
+  -#       - if message.content.present?
+  -#         %p.message__text__content
+  -#           = message.content
+  -#       = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
+  
+  -# .form
+  -#   %input.input{placeholder: "type a message", value:  ""}/
+  -#   .input-btn
+  -#     %i.fa.fa-image.fa-lg
+  -#   %p.submit-btn
+  -#     Send
+  -#   .input-file  
+  -#     %input.input-file{type: "file"}
+
+
