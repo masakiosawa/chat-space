@@ -4,10 +4,10 @@ $(function(){
   let html = `<div class=message>
                 <div class="upper-info">
                   <div class="upper-info__talker">
-                    ${message.user_name}
+                      ${message.user_name}
                   </div>
                   <div class="upper-info__date">
-                    ${message.date}
+                      ${message.date}
                   </div>
                 </div>
                 <div class="message__text">
