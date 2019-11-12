@@ -20,15 +20,6 @@
 
     .messages
       = render @messages
-    
-    -# .form
-    -#   %input.input{placeholder: "type a message", value:  ""}/
-    -#   .input-btn
-    -#     %i.fa.fa-image.fa-lg
-    -#   %p.submit-btn
-    -#     Send
-    -#   .input-file  
-    -#     %input.input-file{type: "file"}
 
     .form
       = form_for [@group, @message] do |f|
