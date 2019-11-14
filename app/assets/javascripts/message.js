@@ -51,12 +51,12 @@ $(function(){
           url: "api/messages",
           type: 'get',
           dataType: 'json',
-          data: {last_id: last_message_id} 
+          data: {id: last_message_id} 
         })
       .done(function(messages){
         let insertHTML = '';
-        messages.forEach(function (message) {
-          insertHTML = buildHTML(message); 
+        messages.forEach(function(message){
+          insertHTML = buildHTML(message)
           $('.messages').append(insertHTML);
           
         })
